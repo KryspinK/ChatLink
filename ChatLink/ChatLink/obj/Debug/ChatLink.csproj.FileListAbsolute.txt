@@ -1,0 +1,15 @@
+C:\Users\zwari\ChatLink\ChatLink\ChatLink\bin\Debug\ChatLink.exe.config
+C:\Users\zwari\ChatLink\ChatLink\ChatLink\bin\Debug\ChatLink.exe
+C:\Users\zwari\ChatLink\ChatLink\ChatLink\bin\Debug\ChatLink.pdb
+C:\Users\zwari\ChatLink\ChatLink\ChatLink\obj\Debug\ChatLink.csproj.AssemblyReference.cache
+C:\Users\zwari\ChatLink\ChatLink\ChatLink\obj\Debug\MainWindow.g.cs
+C:\Users\zwari\ChatLink\ChatLink\ChatLink\obj\Debug\App.g.cs
+C:\Users\zwari\ChatLink\ChatLink\ChatLink\obj\Debug\ChatLink_MarkupCompile.cache
+C:\Users\zwari\ChatLink\ChatLink\ChatLink\obj\Debug\ChatLink_MarkupCompile.lref
+C:\Users\zwari\ChatLink\ChatLink\ChatLink\obj\Debug\MainWindow.baml
+C:\Users\zwari\ChatLink\ChatLink\ChatLink\obj\Debug\ChatLink.g.resources
+C:\Users\zwari\ChatLink\ChatLink\ChatLink\obj\Debug\ChatLink.Properties.Resources.resources
+C:\Users\zwari\ChatLink\ChatLink\ChatLink\obj\Debug\ChatLink.csproj.GenerateResource.cache
+C:\Users\zwari\ChatLink\ChatLink\ChatLink\obj\Debug\ChatLink.csproj.CoreCompileInputs.cache
+C:\Users\zwari\ChatLink\ChatLink\ChatLink\obj\Debug\ChatLink.exe
+C:\Users\zwari\ChatLink\ChatLink\ChatLink\obj\Debug\ChatLink.pdb
