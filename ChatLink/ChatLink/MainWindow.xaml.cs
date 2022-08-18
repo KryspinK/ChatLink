@@ -22,6 +22,8 @@ namespace ChatLink
     /// </summary>
     public partial class MainWindow : Window
     {
+        DBconnection databaseConnection;
+
         
 
 
@@ -33,14 +35,32 @@ namespace ChatLink
             welcome.Foreground = brush;*/
 
             InitializeComponent();
-            
+            databaseConnection = new DBconnection();
+
         }
 
         private void signIn(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Signing in ...");
-            loading.Content = "Signing in ...";
-            loading.Cursor = Cursors.No;
+
+            if (databaseConnection.getIsConnect() == false)
+            {
+                BrushConverter converter = new BrushConverter();
+                Brush b = (Brush)converter.ConvertFromString("Red");
+                loading.Foreground = b;
+                loading.Content = "Not Connected to Server ...";
+
+            }
+            else
+            {
+                Console.WriteLine("Signing in ...");
+                loading.Content = "Signing in ...";
+                loading.Cursor = Cursors.No;
+                databaseConnection.getUsers();
+
+            }
+
+       
+            
         }
 
       
@@ -53,8 +73,6 @@ namespace ChatLink
 
             tbox1.Foreground = b;
            
-    
-            
         }
 
        
@@ -64,9 +82,8 @@ namespace ChatLink
         {
             BrushConverter converter = new BrushConverter();
             Brush b = (Brush)converter.ConvertFromString("Black");
-
+           
             checkBox(tbox2);
-
             tbox2.Foreground = b;
         }
 
@@ -85,13 +102,16 @@ namespace ChatLink
             BrushConverter converter = new BrushConverter();
             Brush b = (Brush)converter.ConvertFromString("LightGray");
 
-            if (tbox1.Text == "")
+            if (tbox1.Text == "" && tbox1.IsFocused == false)
             {
-                tbox1.Text = "Example";
+                tbox1.Text = "Username";
                 tbox1.Foreground = b;
+     
             }
-
             
+
+
+
         }
 
         private void tbox2_MouseLeave(object sender, MouseEventArgs e)
@@ -99,23 +119,23 @@ namespace ChatLink
             BrushConverter converter = new BrushConverter();
             Brush b = (Brush)converter.ConvertFromString("LightGray");
 
-            if (tbox2.Text == "")
+            if (tbox2.Text == ""  && tbox2.IsFocused == false)
             {
-                tbox2.Text = "Example";
+                tbox2.Text = "Password";
                 tbox2.Foreground = b;
+                
             }
         }
 
         private void checkBox(TextBox tb)
         {
-            if (tb.Text == "Example")
+            if (tb.Text == "Username")
             {
                 tb.Text = "";
             }
-            else
+            else if (tb.Text == "Password")
             {
-
-
+                tb.Text = "";
             }
         }
 
@@ -125,5 +145,9 @@ namespace ChatLink
 
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            databaseConnection.CloseConnection();
+        }
     }
 }
