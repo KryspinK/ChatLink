@@ -97,6 +97,11 @@ namespace ChatLink
             clearBox(tbox2);
         }
 
+        private void tbox3_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            clearBox(tbox3);
+        }
+
         private void tbox1_MouseLeave(object sender, MouseEventArgs e)
         {
             BrushConverter converter = new BrushConverter();
@@ -136,7 +141,11 @@ namespace ChatLink
             else if (tb.Text == "Password")
             {
                 tb.Text = "";
+            }else if (tb.Text == "First Name")
+            {
+                tb.Text = "";
             }
+
         }
 
         private void clearBox(TextBox tb)
@@ -148,6 +157,36 @@ namespace ChatLink
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             databaseConnection.CloseConnection();
+            firstName.Visibility = Visibility.Visible;
+            tbox3.Visibility = Visibility.Visible;
+            welcome.Content = "Register Page";
+
         }
+
+        private void tbox3_MouseEnter(object sender, MouseEventArgs e)
+        {
+            BrushConverter converter = new BrushConverter();
+            Brush b = (Brush)converter.ConvertFromString("Black");
+
+            checkBox(tbox3);
+            tbox3.Foreground = b;
+        }
+
+        private void tbox3_MouseLeave(object sender, MouseEventArgs e)
+        {
+            BrushConverter converter = new BrushConverter();
+            Brush b = (Brush)converter.ConvertFromString("LightGray");
+
+            if (tbox3.Text == "" && tbox3.IsFocused == false)
+            {
+                tbox3.Text = "First Name";
+                tbox3.Foreground = b;
+
+            }
+        }
+
+
+
+
     }
 }

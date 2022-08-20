@@ -106,10 +106,14 @@ namespace ChatLink
 
                     while (MyReader.Read())
                     {
-                        string txt = MyReader.GetValue(0).ToString() + " " + MyReader.GetValue(1).ToString();
-                        Console.WriteLine(txt);
+                    int i = Convert.ToInt16(MyReader.GetValue(0));
+                    User u = new User(i, MyReader.GetValue(1).ToString(), null);
+                    // string txt = MyReader.GetValue(0).ToString() + " " + MyReader.GetValue(1).ToString();
+                    //string txt = u.getId() + " " + u.getFirstName() + " " + u.getSecondName();
+                    
+                    Console.WriteLine(u);
                     }
-
+                MyReader.Close();
                 }
             else
             {
