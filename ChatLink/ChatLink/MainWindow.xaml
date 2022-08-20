@@ -15,8 +15,10 @@
         <Label Content="Password :" HorizontalAlignment="Left" Margin="252,232,0,0" VerticalAlignment="Top" Width="68"/>
         <TextBox Text="Username"  HorizontalAlignment="Left" Height="20" Margin="323,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Name="tbox1" Foreground="LightGray" MouseEnter="tbox1_MouseEnter" MouseDoubleClick="tbox1_MouseDoubleClick" MouseLeave="tbox1_MouseLeave"/>
         <TextBox Text="Password" HorizontalAlignment="Left" Height="20" Margin="323,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Name="tbox2" Foreground="LightGray" MouseEnter="tbox2_MouseEnter" MouseDoubleClick="tbox2_MouseDoubleClick" MouseLeave="tbox2_MouseLeave"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="323,272,0,0" VerticalAlignment="Top" Width="170" Height="30" Name="loading" Cursor="Arrow" />
+        <Label Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="170" Height="30" Name="loading" Cursor="Arrow" />
+        <Label Content="First Name : " Visibility="Hidden" Name="firstName" Margin="252,263,456,271"></Label>
         <Image HorizontalAlignment="Left" Height="100" Margin="342,75,0,0" VerticalAlignment="Top" Width="100" Source="ChatLinkIcon1.png"/>
+        <TextBox Text="First Name" HorizontalAlignment="Left" Height="20" Margin="324,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" x:Name="tbox3" Foreground="LightGray" MouseEnter="tbox3_MouseEnter" MouseLeave="tbox3_MouseLeave" MouseDoubleClick="tbox3_MouseDoubleClick" Visibility="Hidden"/>
 
 
     </Grid>
