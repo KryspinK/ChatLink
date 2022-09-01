@@ -17,6 +17,7 @@ namespace ChatLink
         private string uid;
         private string password;
         private bool isCon = false;
+        private int error = 0;
 
         public DBconnection()
         {
@@ -120,6 +121,53 @@ namespace ChatLink
 
                 Console.WriteLine("Not Connected to server");
 
+            }
+
+        }
+
+        public void registerUser(String name, String firstName, String password)
+        {
+            RegisterValidation(name,firstName,password);
+
+            if(error == 0)
+            {
+                string Query = "INSERT INTO sys.user(FirstName,LastName,AccountPassword) VALUES(@name,@firstName,@password);";
+                MySqlCommand cmd = new MySqlCommand(Query, connection);
+                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@firstName", firstName);
+                cmd.Parameters.AddWithValue("@password", password);
+                cmd.ExecuteNonQuery();
+
+            }
+            else
+            {
+                Console.WriteLine("There are Error in Register account");
+            }
+
+
+
+        }
+
+        private void RegisterValidation(string name, string firstn , string password)
+        {
+            string emptyCheck = "";
+
+            if (name == emptyCheck)
+            {
+                error++;
+                Console.WriteLine("name can't be empty");
+            }
+
+            if (firstn == emptyCheck)
+            {
+                error++;
+                Console.WriteLine("firstName can't be empty");
+            }
+
+            if (password == emptyCheck)
+            {
+                error++;
+                Console.WriteLine("password can't be empty");
             }
 
         }

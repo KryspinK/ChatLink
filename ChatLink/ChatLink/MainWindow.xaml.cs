@@ -23,7 +23,7 @@ namespace ChatLink
     public partial class MainWindow : Window
     {
         DBconnection databaseConnection;
-
+        int clickRegisterCount = 0;
         
 
 
@@ -136,14 +136,14 @@ namespace ChatLink
         {
             if (tb.Text == "Username")
             {
-                tb.Text = "";
+                clearBox(tb);
             }
             else if (tb.Text == "Password")
             {
-                tb.Text = "";
+                clearBox(tb);
             }else if (tb.Text == "First Name")
             {
-                tb.Text = "";
+                clearBox(tb);
             }
 
         }
@@ -156,10 +156,41 @@ namespace ChatLink
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            databaseConnection.CloseConnection();
-            firstName.Visibility = Visibility.Visible;
-            tbox3.Visibility = Visibility.Visible;
-            welcome.Content = "Register Page";
+            if(clickRegisterCount == 0)
+            {
+               // databaseConnection.CloseConnection();
+                firstName.Visibility = Visibility.Visible;
+                tbox3.Visibility = Visibility.Visible;
+                welcome.Content = "Register Page";
+                welcome.Margin = new Thickness(310, 28, 0, 0);
+                register.Margin = new Thickness(335, 321, 0, 0);
+                sign.Visibility = Visibility.Hidden;
+                clickRegisterCount++;
+            }
+            else
+            {
+                if (databaseConnection.getIsConnect())
+                {
+                    checkBox(tbox1);
+                    checkBox(tbox2);
+                    checkBox(tbox3);
+
+                    string name = tbox1.Text;
+                    string password = tbox2.Text;
+                    string firstName = tbox3.Text;
+
+                    databaseConnection.registerUser(name,firstName,password);
+                    Console.WriteLine("Still connected...");
+                }
+                else
+                {
+                    Console.WriteLine("Not Connected");
+                }
+
+
+
+            }
+            
 
         }
 
