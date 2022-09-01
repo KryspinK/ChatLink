@@ -9,8 +9,8 @@
 
     <Grid>
         <Label Content="Welcome to ChatLink" HorizontalAlignment="Left" Margin="263,28,0,0" VerticalAlignment="Top" Width="254" Height="42" FontSize="24" Name="welcome" Foreground="Black"/>
-        <Button Content="Sign in" HorizontalAlignment="Left" Margin="263,321,0,0" VerticalAlignment="Top" Width="97" Height="35" Click="signIn"/>
-        <Button Content="Register" HorizontalAlignment="Left" Margin="392,321,0,0" VerticalAlignment="Top" Width="101" Height="35" Click="Button_Click"/>
+        <Button Content="Sign in" HorizontalAlignment="Left" Margin="263,321,0,0" VerticalAlignment="Top" Width="97" Height="35" Click="signIn" Name="sign"/>
+        <Button Content="Register" HorizontalAlignment="Left" Margin="392,321,0,0" VerticalAlignment="Top" Width="101" Height="35" Click="Button_Click" Name="register"/>
         <Label Content="Name :" HorizontalAlignment="Left" Margin="252,201,0,0" VerticalAlignment="Top" Width="68"/>
         <Label Content="Password :" HorizontalAlignment="Left" Margin="252,232,0,0" VerticalAlignment="Top" Width="68"/>
         <TextBox Text="Username"  HorizontalAlignment="Left" Height="20" Margin="323,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Name="tbox1" Foreground="LightGray" MouseEnter="tbox1_MouseEnter" MouseDoubleClick="tbox1_MouseDoubleClick" MouseLeave="tbox1_MouseLeave"/>
